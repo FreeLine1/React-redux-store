@@ -6,26 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {productReducer} from "./redux/reducers/productReducer";
-import addToCart from "./components/AddToCart/AddToCart";
-import CartWindow from "./components/CartWindow/CartWindow";
+
+
 
 const store = createStore(productReducer, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__());
 
 ReactDOM.render(
-
   <React.StrictMode>
       <Provider store={store}>
-
-
-          <addToCart />
-    <App />
-</Provider>
-
+        <App />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

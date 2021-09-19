@@ -1,17 +1,15 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import AddToCart from "./components/AddToCart/AddToCart";
+import Card from "./components/Card/Card";
 import ReactModal from "react-modal";
-import {useDispatch, useSelector} from "react-redux";
+
 import CartWindow from "./components/CartWindow/CartWindow";
 
 
 function App() {
-
     const [productData, setProductData] = useState([]);
-    const [showModal, setModal] = useState(false);
-    const dispatch = useDispatch();
+
 
     useEffect(() => {
         axios({url: `https://fakestoreapi.com/products`})
@@ -28,16 +26,16 @@ function App() {
     return (
         <>
             <CartWindow />
-
-    <div className="container">
-                { productData.length ? productData.map((el) => {
-                    return <AddToCart cart={el} cartView={"Add to Cart"} onInputChange={() => {}} onAdd={()=>{dispatch({type: "ADD_PRODUCT", payload: {product: el, qty: }})}}/>;
-                    })
-                    :
-                    <div></div>
-                }
-
-        </div>
+            <div className="container">
+                {productData.length ? productData.map((el) => {
+                    return(
+                        <Card
+                            cart={el}
+                            type={'add'}
+                            buttonText={"Add to Cart"}
+                            />)
+                    }):null}
+            </div>
         </>
     );
 }
