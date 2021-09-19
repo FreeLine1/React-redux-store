@@ -5,7 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import {productReducer} from "./Redux/reducers/productReducer";
+import {productReducer} from "./redux/reducers/productReducer";
+import addToCart from "./components/AddToCart/AddToCart";
+import CartWindow from "./components/CartWindow/CartWindow";
+
 const store = createStore(productReducer, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__());
 
 ReactDOM.render(
@@ -14,7 +17,7 @@ ReactDOM.render(
       <Provider store={store}>
 
 
-      <addToCart />
+          <addToCart />
     <App />
 </Provider>
 

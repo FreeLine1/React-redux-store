@@ -1,0 +1,17 @@
+Index: src/components/AddToCart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/AddToCart.js b/src/components/AddToCart.js
+--- a/src/components/AddToCart.js	
++++ b/src/components/AddToCart.js	(date 1631987318525)
+@@ -6,7 +6,7 @@
+ export default function AddToCart({cart, onAdd, onDel, cartWiew, className}) {
+     const [compoundPrice, setCompoundPrice] = useState(null);
+     const [count, setCount] = useState(null);
+-    
++
+ 
+     const onChange = (v, target) => {
+         setCount(v)
