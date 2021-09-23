@@ -19,14 +19,17 @@ export default function CartWindow() {
                     {cart.length < 1 ? <div>You haven't goods in your cart!</div> :
                         <div>You have {cart.length} good's in your cart!</div> }
 
-                        {cart.length ? cart.map((el) => {
+                        {cart.map((el) => {
                                 return (
                                     <Card className ="inCart"
                                           buttonText={'Delete'}
                                           cart={el.product}
+                                          inCart={"false"}
+                                          inputCount={el.count}
+                                          itemPrice={el.count * el.price}
                                           cartView={"Del"}
                                           onDel={()=>{dispatch({type: "DEL_PRODUCT", payload: {id: el.product.id}})}}/>
-                                )}):null}
+                                )})}
                 </div>
             </ReactModal>
         </>

@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Card from "./components/Card/Card";
-import ReactModal from "react-modal";
+
 
 import CartWindow from "./components/CartWindow/CartWindow";
 
@@ -31,6 +31,7 @@ function App() {
                     return(
                         <Card
                             cart={el}
+                            inCart={"true"}
                             type={'add'}
                             buttonText={"Add to Cart"}
                             />)
